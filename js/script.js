@@ -17,31 +17,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Video Sound Toggle Simulation
-    // Note: Since we are using an iframe, custom controls require the YouTube Player API.
-    // The button has been hidden in HTML for now.
-    /*
-    const soundToggle = document.querySelector('.sound-toggle');
-    const videoIcon = document.querySelector('.video-placeholder i');
-    let isMuted = true;
-
-    if (soundToggle) {
-        soundToggle.addEventListener('click', function() {
-            isMuted = !isMuted;
-            const icon = this.querySelector('i');
+    // Video Facade Pattern (Lazy Load YouTube)
+    const videoWrapper = document.getElementById('video-wrapper');
+    if (videoWrapper) {
+        const thumbnail = videoWrapper.querySelector('.video-thumbnail');
+        const caption = videoWrapper.querySelector('.video-caption');
+        
+        const loadVideo = () => {
+            const videoId = videoWrapper.getAttribute('data-video-id');
             
-            if (isMuted) {
-                icon.classList.remove('fa-volume-high');
-                icon.classList.add('fa-volume-xmark');
-                console.log('Video muted');
-            } else {
-                icon.classList.remove('fa-volume-xmark');
-                icon.classList.add('fa-volume-high');
-                console.log('Video unmuted');
+            // Create iframe
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('width', '100%');
+            iframe.setAttribute('height', '100%');
+            // Autoplay is ON when user clicks
+            iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=1&autoplay=1`);
+            iframe.setAttribute('title', 'Ceepia Video');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.style.position = 'absolute';
+            iframe.style.top = '0';
+            iframe.style.left = '0';
+            
+            // Replace thumbnail with iframe
+            thumbnail.style.display = 'none';
+            if(caption) caption.style.display = 'none'; // Hide caption to not obstruct controls
+            videoWrapper.appendChild(iframe);
+        };
+
+        thumbnail.addEventListener('click', loadVideo);
+        
+        // Allow keyboard activation (Enter key)
+        thumbnail.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                loadVideo();
             }
         });
     }
-    */
 
     // Form Submission Handling
     const form = document.querySelector('.waitlist-form');
