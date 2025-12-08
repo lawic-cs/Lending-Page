@@ -175,7 +175,7 @@ section {
     display: flex;
     gap: 1.5rem;
     font-size: 0.9rem;
-    color: #666;
+    color: #4a4a4a;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -440,7 +440,7 @@ section {
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
-    color: #666;
+    color: #4a4a4a;
 }
 
 /* 9. Anti-Tech Section */
@@ -498,7 +498,7 @@ section {
 }
 
 .faq-item p {
-    color: #666;
+    color: #4a4a4a;
 }
 
 /* 11. Footer */
