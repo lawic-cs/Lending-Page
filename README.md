@@ -4,24 +4,30 @@ Bienvenue sur le projet de la Landing Page de **Ceepia**, la plateforme de pilot
 
 Cette page a été conçue pour présenter la proposition de valeur de Ceepia, capturer des leads via une liste d'attente et rassurer les futurs utilisateurs (vignerons).
 
-## 🚀 Démarrage Rapide
+## 🚀 Déploiement sur GitHub Pages
 
-Ce projet est un site statique (HTML/CSS/JS). Vous n'avez pas besoin d'installation complexe.
+Ce site est prêt à être hébergé gratuitement sur GitHub Pages.
 
-### Pour visualiser le site :
-1. Ouvrez simplement le fichier `index.html` dans votre navigateur web (Chrome, Firefox, Edge, etc.).
-2. **Ou** lancez un serveur local pour une meilleure expérience (notamment pour le chargement des ressources) :
-   ```bash
-   # Si vous avez Python installé
-   python -m http.server
-   # Puis ouvrez http://localhost:8000
-   ```
+### Comment mettre en ligne :
+1. Créez un nouveau repository sur GitHub.
+2. Poussez ces fichiers (index.html, css/, js/, merci.html, etc.) sur le repository.
+3. Allez dans **Settings** > **Pages** du repository.
+4. Sélectionnez la branche `main` (ou `master`) et sauvegardez.
+5. Votre site sera accessible à l'adresse `https://votre-pseudo.github.io/nom-du-repo/`.
+
+### Fonctionnement du formulaire
+Le formulaire utilise le service gratuit **FormSubmit.co**.
+- Lors de la première soumission sur le site en ligne, vous recevrez un email de confirmation à `loic.ceepia@gmail.com`.
+- **Important** : Vous devez cliquer sur le lien dans cet email pour "Activer" le formulaire.
+- Ensuite, vous recevrez chaque inscription par email.
+- Vous pouvez aussi télécharger toutes les inscriptions au format **CSV** depuis le tableau de bord FormSubmit (lien dans les emails).
 
 ## 📂 Structure du Projet
 
 ```
 /
 ├── index.html          # La structure principale de la page
+├── merci.html          # Page de confirmation après inscription
 ├── robots.txt          # Configuration pour les robots d'indexation (SEO)
 ├── sitemap.xml         # Plan du site pour Google (SEO)
 ├── css/

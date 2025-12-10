@@ -214,10 +214,13 @@
                 <p style="margin-bottom: 2rem; color: #4a4a4a;">Nous limitons les places pour garantir un accompagnement personnalisé à chaque domaine.</p>
                 
                 <form class="waitlist-form" action="https://formsubmit.co/loic.ceepia@gmail.com" method="POST">
-                    <!-- Configuration FormSubmit -->
+                    <!-- Configuration FormSubmit pour GitHub Pages -->
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nouvelle demande d'accès Ceepia">
-                    <input type="hidden" name="_next" value="https://ceepia.com/merci.html"> <!-- Idéalement créer cette page, sinon laisser vide pour page par défaut -->
+                    <input type="hidden" name="_subject" value="Nouveau Lead Ceepia (Landing Page)">
+                    <!-- Redirection après soumission (URL relative ne marche pas toujours avec FormSubmit, on utilise JS ou on met l'URL absolue une fois en ligne) -->
+                    <!-- Pour l'instant, on laisse FormSubmit gérer ou on met une page de merci générique -->
+                    <input type="hidden" name="_next" value="https://ceepia.com/merci.html"> 
+                    <!-- Note: Si vous n'avez pas encore le domaine, mettez l'URL GitHub Pages ex: https://votre-user.github.io/repo/merci.html -->
 
                     <div class="form-row">
                         <div class="form-group">
